@@ -1,0 +1,175 @@
+In file included from /usr/include/c++/11/unordered_set:47,
+                 from helpers.h:12,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/unordered_set.h: In constructor ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(std::initializer_list<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type>, std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type, const hasher&, const key_equal&, const allocator_type&) [with _Value = TCP_Client; _Hash = std::hash<TCP_Client>; _Pred = std::equal_to<TCP_Client>; _Alloc = std::allocator<TCP_Client>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type = TCP_Client; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type = long unsigned int; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::hasher = std::hash<TCP_Client>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_equal = std::equal_to<TCP_Client>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::allocator_type = std::allocator<TCP_Client>]’:
+/usr/include/c++/11/bits/unordered_set.h:223:42: error: use of deleted function ‘std::hash<TCP_Client>::hash()’
+  223 |                     const hasher& __hf = hasher(),
+      |                                          ^~~~~~~~
+In file included from /usr/include/c++/11/string_view:42,
+                 from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from helpers.h:9,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:102:12: note: ‘std::hash<TCP_Client>::hash()’ is implicitly deleted because the default definition would be ill-formed:
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: no matching function for call to ‘std::__hash_enum<TCP_Client, false>::__hash_enum()’
+/usr/include/c++/11/bits/functional_hash.h:83:7: note: candidate: ‘std::__hash_enum<_Tp, <anonymous> >::__hash_enum(std::__hash_enum<_Tp, <anonymous> >&&) [with _Tp = TCP_Client; bool <anonymous> = false]’
+   83 |       __hash_enum(__hash_enum&&);
+      |       ^~~~~~~~~~~
+/usr/include/c++/11/bits/functional_hash.h:83:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: ‘std::__hash_enum<_Tp, <anonymous> >::~__hash_enum() [with _Tp = TCP_Client; bool <anonymous> = false]’ is private within this context
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:84:7: note: declared private here
+   84 |       ~__hash_enum();
+      |       ^
+In file included from subscription_protocol.h:5,
+                 from server_backend.h:5,
+                 from server.cpp:1:
+tcp_client.h:48:82: note:   when instantiating default argument for call to ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set(std::initializer_list<typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type>, std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type, const hasher&, const key_equal&, const allocator_type&) [with _Value = TCP_Client; _Hash = std::hash<TCP_Client>; _Pred = std::equal_to<TCP_Client>; _Alloc = std::allocator<TCP_Client>; typename std::_Hashtable<_Value, _Value, _Alloc, std::__detail::_Identity, _Pred, _Hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<std::__not_<std::__and_<std::__is_fast_hash<_Hash>, std::__is_nothrow_invocable<const _Hash&, const _Tp&> > >::value, true, true> >::value_type = TCP_Client; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::size_type = long unsigned int; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::hasher = std::hash<TCP_Client>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_equal = std::equal_to<TCP_Client>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::allocator_type = std::allocator<TCP_Client>]’
+   48 |                 subscriptions.emplace(topic, std::unordered_set<TCP_Client>{*this});
+      |                                                                                  ^
+tcp_client.h: At global scope:
+tcp_client.h:63:17: error: specialization of ‘std::hash<TCP_Client>’ after instantiation
+   63 |     struct std::hash<TCP_Client>
+      |                 ^~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h: In instantiation of ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::__hash_code std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_M_hash_code(const _Key&) const [with _Key = TCP_Client; _Value = TCP_Client; _ExtractKey = std::__detail::_Identity; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true; std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::__hash_code = long unsigned int]’:
+/usr/include/c++/11/bits/hashtable.h:1593:46:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::find(const key_type&) [with _Key = TCP_Client; _Value = TCP_Client; _Alloc = std::allocator<TCP_Client>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::iterator = std::__detail::_Insert_base<TCP_Client, TCP_Client, std::allocator<TCP_Client>, std::__detail::_Identity, std::equal_to<TCP_Client>, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::key_type = TCP_Client]’
+/usr/include/c++/11/bits/unordered_set.h:651:25:   required from ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator std::unordered_set<_Value, _Hash, _Pred, _Alloc>::find(const key_type&) [with _Value = TCP_Client; _Hash = std::hash<TCP_Client>; _Pred = std::equal_to<TCP_Client>; _Alloc = std::allocator<TCP_Client>; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::iterator = std::__detail::_Insert_base<TCP_Client, TCP_Client, std::allocator<TCP_Client>, std::__detail::_Identity, std::equal_to<TCP_Client>, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, true, true> >::iterator; std::unordered_set<_Value, _Hash, _Pred, _Alloc>::key_type = TCP_Client]’
+tcp_client.h:37:33:   required from here
+/usr/include/c++/11/bits/hashtable_policy.h:1217:23: error: static assertion failed: hash function must be invocable with an argument of key type
+ 1217 |         static_assert(__is_invocable<const _Hash&, const _Key&>{},
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1217:23: note: ‘std::__is_invocable<const std::hash<TCP_Client>&, const TCP_Client&>{}’ evaluates to false
+/usr/include/c++/11/bits/hashtable_policy.h:1219:25: error: no match for call to ‘(const std::hash<TCP_Client>) (const TCP_Client&)’
+ 1219 |         return _M_hash()(__k);
+      |                ~~~~~~~~~^~~~~
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable.h: In instantiation of ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::~_Hashtable() [with _Key = TCP_Client; _Value = TCP_Client; _Alloc = std::allocator<TCP_Client>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’:
+/usr/include/c++/11/bits/unordered_set.h:97:11:   required from ‘void __gnu_cxx::new_allocator<_Tp>::destroy(_Up*) [with _Up = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Tp = std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true>]’
+/usr/include/c++/11/bits/alloc_traits.h:535:15:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::destroy(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*) [with _Up = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Tp = std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true>; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >]’
+/usr/include/c++/11/bits/hashtable_policy.h:1894:35:   required from ‘void std::__detail::_Hashtable_alloc<_NodeAlloc>::_M_deallocate_node(std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_ptr) [with _NodeAlloc = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >; std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_ptr = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >::value_type*]’
+/usr/include/c++/11/bits/hashtable.h:308:57:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Scoped_node::~_Scoped_node() [with _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>]’
+/usr/include/c++/11/bits/hashtable_policy.h:707:42:   required from ‘std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type& std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Pair = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>; std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type = std::unordered_set<TCP_Client>; std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::key_type = std::__cxx11::basic_string<char>]’
+/usr/include/c++/11/bits/unordered_map.h:980:20:   required from ‘std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type& std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = std::unordered_set<TCP_Client>; _Hash = std::hash<std::__cxx11::basic_string<char> >; _Pred = std::equal_to<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type = std::unordered_set<TCP_Client>; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+tcp_client.h:37:27:   required from here
+/usr/include/c++/11/bits/hashtable.h:1534:5: error: use of deleted function ‘std::__detail::_Hashtable_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::equal_to<TCP_Client>, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, true, true> >::~_Hashtable_base()’
+ 1534 |     }
+      |     ^
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1561:12: note: ‘std::__detail::_Hashtable_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::equal_to<TCP_Client>, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, true, true> >::~_Hashtable_base()’ is implicitly deleted because the default definition would be ill-formed:
+ 1561 |     struct _Hashtable_base
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1561:12: error: use of deleted function ‘std::__detail::_Hash_code_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’
+/usr/include/c++/11/bits/hashtable_policy.h:1188:12: note: ‘std::__detail::_Hash_code_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’ is implicitly deleted because the default definition would be ill-formed:
+ 1188 |     struct _Hash_code_base
+      |            ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1188:12: error: use of deleted function ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<TCP_Client>, true>::~_Hashtable_ebo_helper()’
+/usr/include/c++/11/bits/hashtable_policy.h:1124:12: note: ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<TCP_Client>, true>::~_Hashtable_ebo_helper()’ is implicitly deleted because the default definition would be ill-formed:
+ 1124 |     struct _Hashtable_ebo_helper<_Nm, _Tp, true>
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1124:12: error: use of deleted function ‘std::hash<TCP_Client>::~hash()’
+In file included from /usr/include/c++/11/string_view:42,
+                 from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from helpers.h:9,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/functional_hash.h:102:12: note: ‘std::hash<TCP_Client>::~hash()’ is implicitly deleted because the default definition would be ill-formed:
+  102 |     struct hash : __hash_enum<_Tp>
+      |            ^~~~
+/usr/include/c++/11/bits/functional_hash.h:102:12: error: ‘std::__hash_enum<_Tp, <anonymous> >::~__hash_enum() [with _Tp = TCP_Client; bool <anonymous> = false]’ is private within this context
+/usr/include/c++/11/bits/functional_hash.h:84:7: note: declared private here
+   84 |       ~__hash_enum();
+      |       ^
+In file included from /usr/include/c++/11/bits/hashtable_policy.h:34,
+                 from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/tuple: In instantiation of ‘std::pair<_T1, _T2>::pair(std::tuple<_Args1 ...>&, std::tuple<_Args2 ...>&, std::_Index_tuple<_Indexes1 ...>, std::_Index_tuple<_Indexes2 ...>) [with _Args1 = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&}; long unsigned int ..._Indexes1 = {0}; _Args2 = {}; long unsigned int ..._Indexes2 = {}; _T1 = const std::__cxx11::basic_string<char>; _T2 = std::unordered_set<TCP_Client>]’:
+/usr/include/c++/11/tuple:1813:63:   required from ‘std::pair<_T1, _T2>::pair(std::piecewise_construct_t, std::tuple<_Args1 ...>, std::tuple<_Args2 ...>) [with _Args1 = {const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&}; _Args2 = {}; _T1 = const std::__cxx11::basic_string<char>; _T2 = std::unordered_set<TCP_Client>]’
+/usr/include/c++/11/ext/new_allocator.h:162:4:   required from ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Args = {const std::piecewise_construct_t&, std::tuple<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true>]’
+/usr/include/c++/11/bits/alloc_traits.h:516:17:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Args = {const std::piecewise_construct_t&, std::tuple<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>, std::tuple<>}; _Tp = std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true>; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >]’
+/usr/include/c++/11/bits/hashtable_policy.h:1878:36:   required from ‘std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_type* std::__detail::_Hashtable_alloc<_NodeAlloc>::_M_allocate_node(_Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>, std::tuple<>}; _NodeAlloc = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >; std::__detail::_Hashtable_alloc<_NodeAlloc>::__node_ptr = std::allocator<std::__detail::_Hash_node<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, true> >::value_type*]’
+/usr/include/c++/11/bits/hashtable.h:304:35:   required from ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Scoped_node::_Scoped_node(std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc*, _Args&& ...) [with _Args = {const std::piecewise_construct_t&, std::tuple<const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>, std::tuple<>}; _Key = std::__cxx11::basic_string<char>; _Value = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; _ExtractKey = std::__detail::_Select1st; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>; std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::__hashtable_alloc = std::_Hashtable<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char> >, std::hash<std::__cxx11::basic_string<char> >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::__hashtable_alloc]’
+/usr/include/c++/11/bits/hashtable_policy.h:707:42:   required from ‘std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type& std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Pair = std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; _Equal = std::equal_to<std::__cxx11::basic_string<char> >; _Hash = std::hash<std::__cxx11::basic_string<char> >; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, false, true>; std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::mapped_type = std::unordered_set<TCP_Client>; std::__detail::_Map_base<_Key, _Pair, _Alloc, std::__detail::_Select1st, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::key_type = std::__cxx11::basic_string<char>]’
+/usr/include/c++/11/bits/unordered_map.h:980:20:   required from ‘std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type& std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::operator[](const key_type&) [with _Key = std::__cxx11::basic_string<char>; _Tp = std::unordered_set<TCP_Client>; _Hash = std::hash<std::__cxx11::basic_string<char> >; _Pred = std::equal_to<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, std::unordered_set<TCP_Client> > >; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::mapped_type = std::unordered_set<TCP_Client>; std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>::key_type = std::__cxx11::basic_string<char>]’
+tcp_client.h:37:27:   required from here
+/usr/include/c++/11/tuple:1824:9: error: use of deleted function ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set() [with _Value = TCP_Client; _Hash = std::hash<TCP_Client>; _Pred = std::equal_to<TCP_Client>; _Alloc = std::allocator<TCP_Client>]’
+ 1824 |         second(std::forward<_Args2>(std::get<_Indexes2>(__tuple2))...)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/unordered_set:47,
+                 from helpers.h:12,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/unordered_set.h:135:7: note: ‘std::unordered_set<_Value, _Hash, _Pred, _Alloc>::unordered_set() [with _Value = TCP_Client; _Hash = std::hash<TCP_Client>; _Pred = std::equal_to<TCP_Client>; _Alloc = std::allocator<TCP_Client>]’ is implicitly deleted because the default definition would be ill-formed:
+  135 |       unordered_set() = default;
+      |       ^~~~~~~~~~~~~
+/usr/include/c++/11/bits/unordered_set.h:135:7: error: use of deleted function ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable() [with _Key = TCP_Client; _Value = TCP_Client; _Alloc = std::allocator<TCP_Client>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable.h:528:7: note: ‘std::_Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::_Hashtable() [with _Key = TCP_Client; _Value = TCP_Client; _Alloc = std::allocator<TCP_Client>; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _RehashPolicy = std::__detail::_Prime_rehash_policy; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’ is implicitly deleted because the default definition would be ill-formed:
+  528 |       _Hashtable() = default;
+      |       ^~~~~~~~~~
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _Traits>::_Hashtable_base() [with _Key = TCP_Client; _Value = TCP_Client; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’
+In file included from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: note: ‘std::__detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal, _Hash, _RangeHash, _Unused, _Traits>::_Hashtable_base() [with _Key = TCP_Client; _Value = TCP_Client; _ExtractKey = std::__detail::_Identity; _Equal = std::equal_to<TCP_Client>; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; _Traits = std::__detail::_Hashtable_traits<true, true, true>]’ is implicitly deleted because the default definition would be ill-formed:
+ 1604 |       _Hashtable_base() = default;
+      |       ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: error: use of deleted function ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_Hash_code_base() [with _Key = TCP_Client; _Value = TCP_Client; _ExtractKey = std::__detail::_Identity; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true]’
+/usr/include/c++/11/bits/hashtable_policy.h:1210:7: note: ‘std::__detail::_Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash, _Unused, __cache_hash_code>::_Hash_code_base() [with _Key = TCP_Client; _Value = TCP_Client; _ExtractKey = std::__detail::_Identity; _Hash = std::hash<TCP_Client>; _RangeHash = std::__detail::_Mod_range_hashing; _Unused = std::__detail::_Default_ranged_hash; bool __cache_hash_code = true]’ is implicitly deleted because the default definition would be ill-formed:
+ 1210 |       _Hash_code_base() = default;
+      |       ^~~~~~~~~~~~~~~
+/usr/include/c++/11/bits/hashtable_policy.h:1210:7: error: use of deleted function ‘std::__detail::_Hashtable_ebo_helper<1, std::hash<TCP_Client>, true>::~_Hashtable_ebo_helper()’
+/usr/include/c++/11/bits/hashtable_policy.h:1604:7: error: use of deleted function ‘std::__detail::_Hash_code_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::~_Hash_code_base()’
+ 1604 |       _Hashtable_base() = default;
+      |       ^~~~~~~~~~~~~~~
+In file included from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘std::__detail::_Hashtable_base<TCP_Client, TCP_Client, std::__detail::_Identity, std::equal_to<TCP_Client>, std::hash<TCP_Client>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Hashtable_traits<true, true, true> >::~_Hashtable_base()’
+  528 |       _Hashtable() = default;
+      |       ^~~~~~~~~~
+/usr/include/c++/11/bits/hashtable.h:528:7: error: use of deleted function ‘constexpr std::_Enable_default_constructor<false, _Tag>::_Enable_default_constructor() [with _Tag = std::__detail::_Hash_node_base]’
+In file included from /usr/include/c++/11/bits/hashtable.h:36,
+                 from /usr/include/c++/11/unordered_map:46,
+                 from helpers.h:11,
+                 from server_backend.h:4,
+                 from server.cpp:1:
+/usr/include/c++/11/bits/enable_special_members.h:113:15: note: declared here
+  113 |     constexpr _Enable_default_constructor() noexcept = delete;
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~
